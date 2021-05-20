@@ -8,6 +8,17 @@ h1{
     background: #2c2c2c;
 }
 
+.clock {
+    background-color: seagreen;
+    width: 230px;
+    height: 70px;
+    border-radius: 15px;
+    line-height: 70px;
+    font-size: 30px;
+    font-family: 'Tahoma';
+}
+
+
 .Minesweeper {
     color: tomato;
     display: block;

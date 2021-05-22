@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minesweeper</title>
+    <title>💥Minesweeper</title>
     <link rel="stylesheet" href="CSS/main.css">
 </head>
-
 <body onload="initGame()">
+    <button class="smily" onclick="restartGame()"> <span>🤗</span></button> 
     <div class="Minesweeper">
         <h1>Minesweeper</h1>
-        <div class="clock">00:00:00</div>
-        <!-- </div>
-   <div class="levels"> -->
-        <!-- <button onclick="           ({ size: 4, mines: 2 })">Begginer</button>
-        <button onclick="               ({ size: 8, mines: 12 })">Medium</button>
-        <button onclick="           ({ size: 12, mines: 30 })">Expert</button> -->
-    </div> -->
+        <div class="lives"></div>
+        <p class="time">Time: <span>0</span> Seconds</p>
+        <h3> Choose difficulty:</h3>
+        <div class="levels">
+            <p><button onclick="changeLevel(0)" class="level-btn">Beginner</button></p>
+            <p><button onclick="changeLevel(1)" class="level-btn">Medium</button></p>
+            <p><button onclick="changeLevel(2)" class="level-btn">Expert</button></p>
+        </div>
+    </div>
     <table class="table-style">
         <tbody class="board">
         </tbody>
     </table>
+		<div class="modal-win">
+			<img src="img/win.png" alt="win" />
+		</div>
     <p class="nice-footer">Moria Nuri &copy;</p>
     <script src="JS/main.js"> </script>
     <script src="JS/utils.js"> </script>

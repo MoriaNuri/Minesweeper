@@ -96,7 +96,11 @@ text-align: left;
     bottom: 5%;
     transform: translate(-50%, -5%);
 }
- 
+
+.is-shown{
+        background-color: rgb(142 146 154);
+      
+    }
 
 td {
     border: 2px solid black;
@@ -113,8 +117,6 @@ td:hover {
 .cell {width:40px;
      height:40px;
      text-align: center;
-    
-    
     }
 
 

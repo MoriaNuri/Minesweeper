@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="CSS/main.css">
 </head>
 <body onload="initGame()">
-    <button class="smily" onclick="restartGame()"> <span>🤗</span></button> 
+    <button class="status-icon" onclick="restartGame()"> <span></span></button> 
     <div class="Minesweeper">
         <h1>Minesweeper</h1>
         <div class="lives"></div>
@@ -27,6 +27,9 @@
     </table>
 		<div class="modal-win">
 			<img src="img/win.png" alt="win" />
+		</div>
+        <div class="modal-lose">
+			<img src="img/lose.png" alt="los" />
 		</div>
     <p class="nice-footer">Moria Nuri &copy;</p>
     <script src="JS/main.js"> </script>

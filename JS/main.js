@@ -37,8 +37,7 @@ function initGame() {
 }
 
 function buildBoard() {
-    // Create the Matrix
-    var board = createMat(gLevel.size, gLevel.size)// SEND GLEVEL .SIZE  TO HERE??
+    var board = createMat(gLevel.size, gLevel.size)
     for (var i = 0; i < board.length; i++) {
         for (var j = 0; j < board[0].length; j++) {
             var cell = {
@@ -57,13 +56,13 @@ function renderBoard(board) {
     var strHTML = '';
 
     for (var i = 0; i < board.length; i++) {
-        strHTML += '<tr>';  // print row
+        strHTML += '<tr>'; 
         for (var j = 0; j < board[0].length; j++) {
             var currentCell = board[i][j];
             var cellClass = getClassName({ i: i, j: j })
 
             if (currentCell.isShown) cellClass += ' is-shown'
-            strHTML += '\t<td oncontextmenu="cellMarked(this,' + i + ',' + j + ');" onclick="cellClicked(this,' + i + ',' + j + ');"class="' + cellClass + '"> \n' // print cell
+            strHTML += '\t<td oncontextmenu="cellMarked(this,' + i + ',' + j + ');" onclick="cellClicked(this,' + i + ',' + j + ');"class="' + cellClass + '"> \n' 
             if (currentCell.isShown) {
                 if (currentCell.isMine) {
                     strHTML += MINE_ICON
@@ -125,47 +124,34 @@ function cellClicked(elCell, i, j) {
         renderLive()
 
         if (gGame.lives === 0) {
-            gameOver(false)//WIN=FALSE
+            gameOver(false)
             return
         }
     }
-
-    // update model
     modelCell.isShown = true
 
-    // Check if this is the first click.
-    if (gGame.firstClick) {// Onclick start the game
+  
+    if (gGame.firstClick) {
         gGame.firstClick = false
         startTime()
         addRandomMines()
-        setMinesNegsCount()// model
+        setMinesNegsCount()
         renderBoard(gBoard)
     } else {
         renderCell(elCell, i, j)
     }
 
-    // If dont have neighbors with mines, then get all neighboars and change them to be shown and then render again the table.
     if (modelCell.minesAroundCount === 0) {
         expandShown(elCell, i, j)
     }
-
-
-
-
     // in any case
     checkWin()
 }
 
 function cellMarked(elCell, i, j) {
     if (!gGame.isOn || gGame.firstClick || gBoard[i][j].isShown) return 
-
-    // Update model
     gBoard[i][j].isMarked = !gBoard[i][j].isMarked
-
-    // Update DOM
-    // Render specific cell.
     renderCell(elCell, i, j)
-
     checkWin()
 }
 
@@ -177,7 +163,6 @@ function checkWin() {
             if (!cell.isMine && !cell.isShown) return false// no win!!
         }
     }
-
     gameOver(true)  // if win
 }
 
@@ -191,13 +176,14 @@ function gameOver(win) {
     }
     else {
         showAllMines()
-        alert("LOSE")
+        showLoseModal()
     }
 }
 
 function restartGame() {
     initGame()
     hideWinModal()
+    hideLoseModal()
     restartTimer()
 }
 
@@ -269,14 +255,14 @@ function hideWinModal() {
 }
 
 function showLoseModal() {
-    var elWinModal = document.querySelector('.modal-win')
+    var elWinModal = document.querySelector('.modal-lose')
     elWinModal.style.display = 'block'
 
     setTimeout(hideWinModal, 4000)
 }
 
 function hideLoseModal() {
-    var elWinModal = document.querySelector('.modal-win')
+    var elWinModal = document.querySelector('.modal-lose')
     elWinModal.style.display = 'none'
 }
 

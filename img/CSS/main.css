@@ -1,0 +1,187 @@
+body{
+    background-color: #2c2c2c;
+    text-align: center;
+}
+
+h1{
+    background: #2c2c2c;
+}
+
+.smily {
+	padding: 0.1rem;
+	font-size: 1.5em;
+}
+
+.time {
+    width: 200px;
+    height: 50px;
+    line-height: 70px;
+    font-size: 20px;
+    font-family: 'Tahoma';
+    text-align: center;
+    font-family: 'Marck Script', cursive;   
+}
+
+.Minesweeper {
+    color: tomato;
+    display: block;
+    text-shadow: 0 0 10px orangered, 0 0 20px firebrick, 0 0 40px maroon, 0 0 80px darkred;
+    will-change: filter, color;
+    filter: saturate(60%);
+    animation: flicker steps(100) 3s 3s infinite;
+    font-family: 'Marck Script', cursive;
+}
+
+@keyframes flicker {
+    50% {
+        color: rgb(255, 255, 255);
+        filter: saturate(200%) hue-rotate(20deg);
+    }
+}
+
+ h2{
+text-align: left;
+
+ }
+
+ .lives {
+    position: absolute;
+    font-size: 26px;
+} 
+
+
+.levels {
+    position: absolute;
+    top: 190px;
+    padding: 10px;
+}
+
+.level-btn {
+    background-color: lightgray;
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-family:'Marck Script', cursive;
+    font-size: large;
+    font-weight: bold;
+}
+
+.level-btn:hover {
+    background-color: rgb(179, 174, 174);
+    cursor: pointer;
+    border: 2px dashed rgb(168, 47, 47);
+}
+
+.level-btn:active {
+    background-color: rgb(189, 78, 78);
+}
+
+.safe {
+    background-color: lightgray;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-family:     'Marck Script', cursive;
+    font-size: large;
+    font-weight: bold;
+    position: absolute;
+    top: 440px;
+    left: 0px;
+}
+
+.safe:hover {
+    background-color: rgb(179, 174, 174);
+    cursor: pointer;
+    border: 2px dashed rgb(168, 47, 47);
+}
+
+.available-safe{
+text-align: left;
+left: 20px;
+}
+
+
+.safe:active {
+    background-color: rgb(189, 78, 78);
+}
+
+
+.table-style{
+    background-color: rgb(206, 7, 7);
+    border: 2px prominent rgb(121, 62, 62);
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translate(-50%, -5%);
+}
+
+.is-shown{
+        background-color: rgb(142 146 154);
+      
+    }
+
+td {
+    border: 2px solid black;
+    background-color: rgb(211, 216, 224);
+    width: 20px;
+    height: 20px;
+}
+
+td:hover {
+    background-color: rgb(180, 37, 32);
+    cursor: pointer;
+}
+/* 
+.cell {width:40px;
+     height:40px;
+     text-align: center;
+    } */
+
+
+.modal-win {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	height: auto;
+}
+
+.modal-win img {
+	width: 100%;
+	height: 100%;
+}
+
+.modal-lose {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	height: auto;
+}
+
+.modal-lose img {
+	width: 100%;
+	height: 100%;
+}
+.nice-footer {
+    background-color: lightgray;
+    padding: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: cursive;
+    
+}
+
+
+
